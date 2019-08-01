@@ -1,0 +1,19 @@
+commit 022212953ac07b16e8c3e588423b3be54f9e1715
+Author: Cornelis Bockemühl <cornelis@bockemuehl.ch>
+Date:   Thu Nov 15 23:34:28 2018 +0100
+
+    Correcting a python version check
+
+diff --git a/Wrapping/Python/paraview/vtk.py b/Wrapping/Python/paraview/vtk.py
+index 054a2d1c88..788d4d9c2a 100644
+--- a/Wrapping/Python/paraview/vtk.py
++++ b/Wrapping/Python/paraview/vtk.py
+@@ -1,7 +1,7 @@
+ """This is the paraview.vtk module."""
+ import sys
+ 
+-if sys.version_info < (3,4):
++if sys.version_info <= (3,4):
+     # imp is deprecated in 3.4
+     import imp, importlib
+ 

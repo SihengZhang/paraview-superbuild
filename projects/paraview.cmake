@@ -260,6 +260,11 @@ if (paraview_SOURCE_SELECTION STREQUAL "5.6.0")
     "Fix eye dome lighting in parallel")
 endif ()
 
+if (paraview_SOURCE_SELECTION STREQUAL "5.6.1")
+  superbuild_apply_patch(paraview py34-implib-check
+    "Fix issue with python 3.4 builds not loading modules")
+endif ()
+
 if (WIN32 AND las_enabled)
   superbuild_append_flags(cxx_flags "-DBOOST_ALL_NO_LIB" PROJECT_ONLY)
 endif()
