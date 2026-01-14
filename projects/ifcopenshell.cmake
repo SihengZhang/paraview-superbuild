@@ -30,5 +30,6 @@ superbuild_add_project(ifcopenshell
     -DOpenCASCADE_DIR=<INSTALL_DIR>/lib/cmake/opencascade
 )
 
+# https://github.com/IfcOpenShell/IfcOpenShell/issues/7561
 superbuild_apply_patch(ifcopenshell install-geomlibraryapi
   "install ifc_geomlibrary_api.h")
