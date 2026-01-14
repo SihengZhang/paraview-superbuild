@@ -1,0 +1,13 @@
+diff --git a/src/ifcgeom/kernels/CMakeLists.txt b/src/ifcgeom/kernels/CMakeLists.txt
+index b75ec96c4..661a8b18a 100644
+--- a/src/ifcgeom/kernels/CMakeLists.txt
++++ b/src/ifcgeom/kernels/CMakeLists.txt
+@@ -1,5 +1,8 @@
+ find_package(Eigen3 REQUIRED)
+ 
++install(FILES ifc_geomlibrary_api.h
++  DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/ifcgeom/kernels/"
++)
+ foreach(kernel ${GEOMETRY_KERNELS})
+     string(TOUPPER ${kernel} KERNEL_UPPER)
+     file(GLOB IFCGEOM_H_FILES ${kernel}/*.h)

@@ -67,6 +67,7 @@ function (superbuild_find_projects var)
     geotiff
     hdf5
     h5py
+    ifcopenshell
     imath
     ispc
     jsonc

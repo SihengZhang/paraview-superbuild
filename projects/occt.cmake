@@ -1,6 +1,7 @@
 # Build OpenCascade Core Technology
 # This is newer than the oce project (which is used by CGM).
-set(occt_toolkits TKDESTEP TKDEIGES TKMesh TKBinXCAF)
+set(occt_toolkits TKDESTEP TKDEIGES TKMesh TKBinXCAF TKOffset
+)
 list(JOIN occt_toolkits "${_superbuild_list_separator}" occt_toolkits_escaped)
 
 superbuild_add_project(occt

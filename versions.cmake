@@ -394,6 +394,13 @@ superbuild_set_revision(occt
   URL     "https://www.paraview.org/files/dependencies/occt-7.9.2-stripped.tar.bz2"
   URL_MD5 fb6e410bef4cfeb3fc3374042babf88b)
 
+superbuild_set_selectable_source(ifcopenshell
+  SELECT git CUSTOMIZABLE DEFAULT
+    GIT_REPOSITORY "https://github.com/IfcOpenShell/IfcOpenshell.git"
+    GIT_TAG        "a460e29473622c75685eedf6a2f531dc9aff1905"
+    )
+
+
 superbuild_set_revision(medfile
   # From: https://www.salome-platform.org/?page_id=2768
   URL           "https://www.paraview.org/files/dependencies/med-6.0.1.tar.gz"
