@@ -5,6 +5,8 @@ superbuild_add_project(ifcopenshell
     boost
     eigen
     occt
+  LICENSE_FILES
+    COPYING.LESSER
   SPDX_LICENSE_IDENTIFIER
     LGPL-3.0-or-later
   Spdx_COPYRIGHT_TEXT
