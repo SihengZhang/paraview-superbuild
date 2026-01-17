@@ -394,12 +394,13 @@ superbuild_set_revision(occt
   URL     "https://www.paraview.org/files/dependencies/occt-7.9.2-stripped.tar.bz2"
   URL_MD5 fb6e410bef4cfeb3fc3374042babf88b)
 
-superbuild_set_selectable_source(ifcopenshell
-  SELECT git CUSTOMIZABLE DEFAULT
-    GIT_REPOSITORY "https://github.com/IfcOpenShell/IfcOpenshell.git"
-    GIT_TAG        "a460e29473622c75685eedf6a2f531dc9aff1905"
-    )
-
+superbuild_set_revision(ifcopenshell
+  # https://github.com/IfcOpenShell/IfcOpenshell.git
+  # version newer than ifcopenshell-python-0.8.4 because we need cmake support
+  # not available in 0.8.4
+  # we should use ifcopenshell-python-0.8.5 when is released
+  URL "http://localhost/IfcOpenShell-v0.8.0.a460e29473622c75685eedf6a2f531dc9aff1905.tar.gz"
+  URL_MD5 29d70e4d9f508674ebb67e49b0b4b4ed)
 
 superbuild_set_revision(medfile
   # From: https://www.salome-platform.org/?page_id=2768
