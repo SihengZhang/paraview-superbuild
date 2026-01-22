@@ -49,6 +49,7 @@ function (superbuild_find_projects var)
     abseil
     adios2
     alembic
+    anari
     blosc
     blosc2
     boost

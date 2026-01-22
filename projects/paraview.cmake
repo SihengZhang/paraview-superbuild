@@ -137,7 +137,7 @@ if (PARAVIEW_ENABLE_CAVEInteraction AND UNIX)
 endif()
 
 set(paraview_use_raytracing OFF)
-if (ospray_enabled OR visrtx_enabled)
+if (ospray_enabled OR visrtx_enabled OR anari_enabled)
   set(paraview_use_raytracing ON)
 endif ()
 
@@ -365,7 +365,7 @@ superbuild_add_project(paraview
     -DPARAVIEW_ENABLE_RAYTRACING:BOOL=${paraview_use_raytracing}
     -DVTKOSPRAY_ENABLE_DENOISER:BOOL=${openimagedenoise_enabled}
     -DVTK_ENABLE_OSPRAY:BOOL=${ospray_enabled}
-    -DVTK_ENABLE_VISRTX:BOOL=${visrtx_enabled}
+    -DPARAVIEW_ENABLE_ANARI:BOOL=${anari_enabled}
 
     # IndeX
     -DPARAVIEW_PLUGIN_ENABLE_pvNVIDIAIndeX:BOOL=${nvidiaindex_enabled}

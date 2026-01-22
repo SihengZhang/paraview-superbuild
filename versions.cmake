@@ -1,3 +1,8 @@
+superbuild_set_revision(anari
+  # https://github.com/KhronosGroup/ANARI-SDK/releases
+  URL     "https://github.com/KhronosGroup/ANARI-SDK/archive/refs/tags/v0.15.0.tar.gz"
+  URL_MD5 67145f51cb4cd98c78948735bc2fc6ae)
+
 superbuild_set_revision(eigen
   # https://gitlab.com/libeigen/eigen/-/releases
   URL     "https://www.paraview.org/files/dependencies/eigen-3.4.0.tar.bz2"
@@ -226,27 +231,43 @@ superbuild_set_selectable_source(nvidiaindex
 
 # These two packages are only available at these URLs from inside Kitware. They
 # are available from NVIDIA at the URLs in the comments in each revision set.
-if (WIN32)
-  set(nvidiaoptix_platform "win64")
-  set(nvidiaoptix_md5 "1cc3026f4a1fc945e7158e8a66f8f9bd")
-elseif (UNIX AND NOT APPLE)
-  set(nvidiaoptix_platform "linux64")
-  set(nvidiaoptix_md5 "b5e9cdcb691ad7813e4e24986579a1ef")
-endif ()
+set(nvidiaoptix_md5 "705f25d8a938c41ec682774c445da7e4")
 superbuild_set_revision(nvidiaoptix
   # https://developer.nvidia.com/designworks/optix/download
-  URL     "https://www.paraview.org/files/dependencies/internal/NVIDIA-OptiX-SDK-6.0.0-${nvidiaoptix_platform}-25650775.tar.gz"
+  URL     "https://www.paraview.org/files/dependencies/internal/NVIDIA-OptiX-SDK-8.0.0-stripped.tar.gz"
   URL_MD5 "${nvidiaoptix_md5}")
 
+set(nvidiamdl_url "")
+set(nvidiamdl_hash "")
+if (WIN32)
+  set(nvidiamdl_url "https://github.com/NVIDIA/MDL-SDK/releases/download/2025.0.3/MDL-SDK-2025.0.3-387700.2665-nt-x86-64.zip")
+  set(nvidiamdl_hash "SHA256=01d9b344fd389e40a1b62477aed3a11ef26420981be731b16b15d67238a97368")
+elseif (UNIX AND NOT APPLE)
+  if (CMAKE_HOST_SYSTEM_PROCESSOR STREQUAL "aarch64")
+    set(nvidiamdl_url "https://github.com/NVIDIA/MDL-SDK/releases/download/2025.0.3/MDL-SDK-2025.0.3-387700.2665-linux-aarch64.tgz")
+    set(nvidiamdl_hash "SHA256=16d4778b76dda35dfcf79b175fc3a332a03f425668c93203bd1209b8274f7538")
+  else()
+    set(nvidiamdl_url "https://github.com/NVIDIA/MDL-SDK/releases/download/2025.0.3/MDL-SDK-2025.0.3-387700.2665-linux-x86-64.tgz")
+    set(nvidiamdl_hash "SHA256=04298d61f63769415a5b6ee5df7512f0d10c1ce4bf2d9ce0122ed8269d054b58")
+  endif()
+elseif (APPLE)
+  if (CMAKE_HOST_SYSTEM_PROCESSOR STREQUAL "aarch64")
+    set(nvidiamdl_url "https://github.com/NVIDIA/MDL-SDK/releases/download/2025.0.3/MDL-SDK-2025.0.3-387700.2665-macosx-aarch64.tgz")
+    set(nvidiamdl_hash "SHA256=31aefb6196b5ddf7e20577f0ff1784b9d7cae07bbf5bab286481a48eb6f015a5")
+  else()
+    set(nvidiamdl_url "https://github.com/NVIDIA/MDL-SDK/releases/download/2025.0.3/MDL-SDK-2025.0.3-387700.2665-macosx-x86-64.tgz")
+    set(nvidiamdl_hash "SHA256=ff3f0abbef39ada5b18122b0e788ca9acd0171d50c9ebcda2f6b25878cb90a19")
+  endif()
+endif()
 superbuild_set_revision(nvidiamdl
   # https://developer.nvidia.com/mdl-sdk
-  URL     "https://www.paraview.org/files/dependencies/internal/mdl-sdk-314800.830.tar.bz2"
-  URL_MD5 "d500a122918741eb418887d66e03325b")
+  URL     "${nvidiamdl_url}"
+  URL_HASH "${nvidiamdl_hash}")
 
 superbuild_set_revision(visrtx
   # https://github.com/NVIDIA/VisRTX/releases
-  URL     "https://www.paraview.org/files/dependencies/visrtx-v0.1.6.tar.gz"
-  URL_MD5 "c5fef9abd9d56bbbf2c222f0b0943e41")
+  URL     "https://github.com/NVIDIA/VisRTX/archive/refs/tags/v0.13.0.tar.gz"
+  URL_MD5 "751e5fa8c76f31bdfd36f4c3f058c5fc")
 
 superbuild_set_revision(rapidjson
   # https://github.com/Tencent/rapidjson/releases

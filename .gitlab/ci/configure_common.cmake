@@ -20,6 +20,7 @@ endfunction ()
 
 enable_project(adios2)
 enable_project(alembic)
+enable_project(anari)
 enable_project(blosc)
 enable_project(blosc2)
 enable_project(cdi)

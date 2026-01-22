@@ -1,7 +1,6 @@
 superbuild_add_project(nvidiamdl
   LICENSE_FILES
-    "${CMAKE_CURRENT_LIST_DIR}/files/NVIDIA-OptiX-SDK-6.0.0-EULA.txt" # The package only provide a license in .pdf format
-    license.txt
+    LICENSE.md
   SPDX_LICENSE_IDENTIFIER
     "LicenseRef-nvidiaoptix AND BSD-3-Clause AND FreeImage AND LGPL-2.1-Only AND Libpng AND BSD-2-Clause AND IJG AND BSD-1.0 AND OFL-1.1-no-RFN AND OFL-1.1-RFN"
   SPDX_COPYRIGHT_TEXT
