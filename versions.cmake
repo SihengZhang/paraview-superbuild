@@ -396,10 +396,13 @@ superbuild_set_revision(occt
 
 superbuild_set_revision(ifcopenshell
   # https://github.com/IfcOpenShell/IfcOpenshell.git
-  # version newer than ifcopenshell-python-0.8.4 because we need cmake support
-  # not available in 0.8.4
-  # we should use ifcopenshell-python-0.8.5 when is released
-  URL "http://localhost/IfcOpenShell-v0.8.0.a460e29473622c75685eedf6a2f531dc9aff1905.tar.gz"
+  # branch: v0.8.0, SHA: a460e29473622c75685eedf6a2f531dc9aff1905
+  # tag: bonsai-0.8.5-alpha2601081541
+  # This is the current version on this branch (which is the default branch)
+  # which is newer than ifcopenshell-python-0.8.4 (the latest released)
+  # because we need cmake support not available in 0.8.4.
+  # we should upgrade to ifcopenshell-python-0.8.5 when it is released
+  URL "https://www.paraview.org/files/dependencies/IfcOpenShell-v0.8.0.a460e29473622c75685eedf6a2f531dc9aff1905.tar.gz"
   URL_MD5 29d70e4d9f508674ebb67e49b0b4b4ed)
 
 superbuild_set_revision(medfile
