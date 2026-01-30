@@ -402,8 +402,8 @@ superbuild_set_revision(ifcopenshell
   # which is newer than ifcopenshell-python-0.8.4 (the latest released)
   # because we need cmake support not available in 0.8.4.
   # we should upgrade to ifcopenshell-python-0.8.5 when it is released
-  URL "https://www.paraview.org/files/dependencies/IfcOpenShell-v0.8.0.a460e29473622c75685eedf6a2f531dc9aff1905.tar.gz"
-  URL_MD5 29d70e4d9f508674ebb67e49b0b4b4ed)
+  URL "https://www.paraview.org/files/dependencies/IfcOpenShell-a460e29473622c75685eedf6a2f531dc9aff1905.tar.gz"
+  URL_MD5 6c8f780f1690a2d5b7c02f0720e02f83)
 
 superbuild_set_revision(medfile
   # From: https://www.salome-platform.org/?page_id=2768
