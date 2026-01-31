@@ -9,7 +9,7 @@ superbuild_add_project(ifcopenshell
     COPYING.LESSER
   SPDX_LICENSE_IDENTIFIER
     LGPL-3.0-or-later
-  Spdx_COPYRIGHT_TEXT
+  SPDX_COPYRIGHT_TEXT
     # From https://docs.ifcopenshell.org/introduction.html
     "Copyright (c) 2011-2025 IfcOpenShell Contributors"
   SOURCE_SUBDIR
