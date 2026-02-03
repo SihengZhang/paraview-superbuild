@@ -15,6 +15,7 @@ superbuild_add_project(ifcopenshell
   SOURCE_SUBDIR
     cmake
   CMAKE_ARGS
+    -DBUILD_SHARED_LIBS:BOOL=${BUILD_SHARED_LIBS}
     -DCMAKE_INSTALL_RPATH:PATH=$ORIGIN/../lib
     -DINSTALL_LIB_DIR:STRING=lib
     -DCMAKE_INSTALL_NAME_DIR:PATH=<INSTALL_DIR>/lib
@@ -33,3 +34,6 @@ superbuild_add_project(ifcopenshell
 # https://github.com/IfcOpenShell/IfcOpenShell/issues/7561
 superbuild_apply_patch(ifcopenshell install-geomlibraryapi
   "install ifc_geomlibrary_api.h")
+
+superbuild_apply_patch(ifcopenshell boost-options
+  "set Boost_USE_STATIC_LIBS depending on BUILD_SHARED_LIBS")

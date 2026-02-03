@@ -1,0 +1,60 @@
+diff -u -Nr -U5 src.orig/cmake/CMakeLists.txt src/cmake/CMakeLists.txt
+--- src.orig/cmake/CMakeLists.txt	2026-02-02 17:48:40.140904100 -0500
++++ src/cmake/CMakeLists.txt	2026-02-03 09:15:25.382040300 -0500
+@@ -277,11 +277,15 @@
+ endif()
+ 
+ # Find Boost: On win32 the (hardcoded) default is to use static libraries and
+ # runtime, when doing running conda-build we pick what conda prepared for us.
+ if(WIN32 AND NOT DEFINED ENV{CONDA_BUILD})
+-    set(Boost_USE_STATIC_LIBS ON)
++    if (BUILD_SHARED_LIBS)
++      set(Boost_USE_STATIC_LIBS OFF)
++    else()
++      set(Boost_USE_STATIC_LIBS ON)
++    endif()
+     set(Boost_USE_STATIC_RUNTIME OFF)
+     set(Boost_USE_MULTITHREADED ON)
+ 
+     # Disable Boost's autolinking as the libraries to be linked to are supplied
+     # already by CMake, and wrong libraries would be asked for when code is
+diff -u -Nr -U5 src.orig/cmake/IfcOpenShellConfig.cmake.in src/cmake/IfcOpenShellConfig.cmake.in
+--- src.orig/cmake/IfcOpenShellConfig.cmake.in	2026-02-02 17:48:40.156784600 -0500
++++ src/cmake/IfcOpenShellConfig.cmake.in	2026-02-03 09:17:09.790600400 -0500
+@@ -8,11 +8,15 @@
+ set(IFCOPENSHELL_IFCXML @IFCXML_SUPPORT@)
+ set(IFCOPENSHELL_WITH_ROCKSDB @WITH_ROCKSDB@)
+ 
+ include(CMakeFindDependencyMacro)
+ 
+-set(Boost_USE_STATIC_LIBS ON)
++if (BUILD_SHARED_LIBS)
++  set(Boost_USE_STATIC_LIBS OFF)
++else()
++  set(Boost_USE_STATIC_LIBS ON)
++endif()
+ set(Boost_USE_STATIC_RUNTIME OFF)
+ set(Boost_USE_MULTITHREADED ON)
+ set(Boost_COMPONENTS system program_options regex thread date_time iostreams)
+ find_dependency(Boost CONFIG COMPONENTS ${Boost_COMPONENTS})
+ find_dependency(Eigen3 CONFIG)
+diff -u -Nr -U5 src.orig/src/svgfill/CMakeLists.txt src/src/svgfill/CMakeLists.txt
+--- src.orig/src/svgfill/CMakeLists.txt	2026-02-02 17:48:41.124068700 -0500
++++ src/src/svgfill/CMakeLists.txt	2026-02-03 09:17:30.825623200 -0500
+@@ -9,11 +9,15 @@
+ if(POLICY CMP0167) # 3.30 find_package(Boost) to use BoostConfig instead of FindBoost.
+     cmake_policy(SET CMP0167 OLD)
+ endif()
+ 
+ if(WIN32 AND NOT DEFINED ENV{CONDA_BUILD})
+-    set(Boost_USE_STATIC_LIBS ON)
++    if (BUILD_SHARED_LIBS)
++      set(Boost_USE_STATIC_LIBS OFF)
++    else()
++      set(Boost_USE_STATIC_LIBS ON)
++    endif()
+     set(Boost_USE_MULTITHREADED ON)
+     if(USE_STATIC_MSVC_RUNTIME)
+         set(Boost_USE_STATIC_RUNTIME ON)
+     endif()
+ else()
