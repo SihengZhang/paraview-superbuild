@@ -19,6 +19,9 @@ superbuild_add_project(ifcopenshell
     -DCMAKE_INSTALL_RPATH:PATH=$ORIGIN/../lib
     -DINSTALL_LIB_DIR:STRING=lib
     -DCMAKE_INSTALL_NAME_DIR:PATH=<INSTALL_DIR>/lib
+    # this is needed because
+    # https://github.com/IfcOpenShell/IfcOpenShell/issues/1029
+    -DBUILD_ONLY_COMMON_SCHEMAS=ON
     -DBUILD_IFCPYTHON:BOOL=OFF
     -DCOLLADA_SUPPORT:BOOL=OFF
     -DBUILD_GEOMSERVER:BOOL=OFF
