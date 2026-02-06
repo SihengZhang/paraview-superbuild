@@ -36,7 +36,10 @@ superbuild_add_project(ifcopenshell
 
 # https://github.com/IfcOpenShell/IfcOpenShell/issues/7561
 superbuild_apply_patch(ifcopenshell install-geomlibraryapi
-  "install ifc_geomlibrary_api.h")
+  "Install ifc_geomlibrary_api.h")
 
 superbuild_apply_patch(ifcopenshell boost-options
-  "set Boost_USE_STATIC_LIBS depending on BUILD_SHARED_LIBS")
+  "Set Boost_USE_STATIC_LIBS depending on BUILD_SHARED_LIBS")
+
+superbuild_apply_patch(ifcopenshell constructor-in-cpp
+  "Move constructor to cpp")

@@ -1,0 +1,40 @@
+diff -u -Nr -U5 src.orig/src/ifcgeom/taxonomy.cpp src/src/ifcgeom/taxonomy.cpp
+--- src.orig/src/ifcgeom/taxonomy.cpp	2026-01-08 10:41:29.000000000 -0500
++++ src/src/ifcgeom/taxonomy.cpp	2026-02-05 20:12:02.636955900 -0500
+@@ -589,10 +589,11 @@
+ 
+ 	return values[k];
+ }
+ 
+ std::atomic_uint32_t item::counter_(0);
++item::item(const IfcUtil::IfcBaseInterface* instance) : identity_(counter_++), computed_hash_(0), instance(instance) {}          
+ 
+ void ifcopenshell::geometry::taxonomy::item::print(std::ostream& o, int indent) const {
+ 	o << std::string(indent, ' ') << kind_to_string(kind()) << std::endl;
+ }
+ 
+diff -u -Nr -U5 src.orig/src/ifcgeom/taxonomy.h src/src/ifcgeom/taxonomy.h
+--- src.orig/src/ifcgeom/taxonomy.h	2026-01-08 10:41:29.000000000 -0500
++++ src/src/ifcgeom/taxonomy.h	2026-02-05 20:12:02.642956800 -0500
+@@ -176,11 +176,11 @@
+ 						computed_hash_++;
+ 					}
+ 					return computed_hash_;
+ 				}
+ 
+-				item(const IfcUtil::IfcBaseInterface* instance = nullptr) : identity_(counter_++), computed_hash_(0), instance(instance) {}
++				item(const IfcUtil::IfcBaseInterface* instance = nullptr);
+ 
+ 				virtual ~item() {}
+ 
+ 				uint32_t identity() const { return identity_; }
+ 			};
+@@ -1753,6 +1753,6 @@
+ 		typedef std::tuple<connection_type, connection_type, IfcUtil::IfcBaseEntity*> endpoint_connection;
+ 	}
+ 
+ }
+ 
+-#endif
+\ No newline at end of file
++#endif
