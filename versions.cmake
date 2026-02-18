@@ -266,8 +266,8 @@ superbuild_set_revision(nvidiamdl
 
 superbuild_set_revision(visrtx
   # https://github.com/NVIDIA/VisRTX/releases
-  URL     "https://github.com/NVIDIA/VisRTX/archive/refs/tags/v0.13.0.tar.gz"
-  URL_MD5 "751e5fa8c76f31bdfd36f4c3f058c5fc")
+  URL     "https://github.com/NVIDIA/VisRTX/archive/8d98e069a52d511d82820da39e7b82bbcfdaa3e0.zip"
+  URL_MD5 "39e1e45eb3c3a4752ed58d572303022b")
 
 superbuild_set_revision(rapidjson
   # https://github.com/Tencent/rapidjson/releases
