@@ -78,6 +78,7 @@ enable_project(tbb)
 enable_project(ttk)
 enable_project(visitbridge)
 enable_project(viskores)
+enable_project(visrtx)
 enable_project(vortexfinder2)
 enable_project(vrpn)
 enable_project(xdmf3)
@@ -86,8 +87,6 @@ enable_project(zfp)
 enable_project(zstd)
 
 set(ENABLE_paraviewsdk              OFF CACHE BOOL "")
-# needs cuda
-set(ENABLE_visrtx                   OFF CACHE BOOL "")
 
 # output suppressions
 suppress_project(boost)
