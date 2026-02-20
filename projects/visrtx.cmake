@@ -5,6 +5,7 @@ if (UNIX AND NOT APPLE)
 endif ()
 
 superbuild_add_project(visrtx
+  SOURCE_SUBDIR "devices/rtx"
   DEPENDS anari nvidiamdl nvidiaoptix
   LICENSE_FILES
     LICENSE
@@ -17,8 +18,6 @@ superbuild_add_project(visrtx
     -DCMAKE_MACOSX_RPATH:BOOL=FALSE
     -DCMAKE_INSTALL_NAME_DIR:PATH=<INSTALL_DIR>/lib
     -DCMAKE_INSTALL_LIBDIR:STRING=lib
-    -DVISRTX_BUILD_EXAMPLES:BOOL=OFF
-    -DVISRTX_BUILD_INTERACTIVE_EXAMPLE:BOOL=OFF
     -DVISRTX_ENABLE_MDL_SUPPORT:BOOL=ON
     -DVISRTX_ENABLE_NVML:BOOL=OFF
     ${visrtx_options})
