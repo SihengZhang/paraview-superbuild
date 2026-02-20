@@ -6,7 +6,7 @@ endif ()
 
 superbuild_add_project(visrtx
   SOURCE_SUBDIR "devices/rtx"
-  DEPENDS anari nvidiamdl nvidiaoptix
+  DEPENDS anari nvidiamdl
   LICENSE_FILES
     LICENSE
   SPDX_LICENSE_IDENTIFIER

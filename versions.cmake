@@ -229,14 +229,6 @@ superbuild_set_selectable_source(nvidiaindex
     URL     "https://www.paraview.org/files/dependencies/nvidia-index-libs-2.1.20180314-${nvidiaindex_platform}.tar.bz2"
     URL_MD5 "${nvidiaindex_2_1_md5}")
 
-# These two packages are only available at these URLs from inside Kitware. They
-# are available from NVIDIA at the URLs in the comments in each revision set.
-set(nvidiaoptix_md5 "705f25d8a938c41ec682774c445da7e4")
-superbuild_set_revision(nvidiaoptix
-  # https://developer.nvidia.com/designworks/optix/download
-  URL     "https://www.paraview.org/files/dependencies/internal/NVIDIA-OptiX-SDK-8.0.0-stripped.tar.gz"
-  URL_MD5 "${nvidiaoptix_md5}")
-
 set(nvidiamdl_url "")
 set(nvidiamdl_hash "")
 if (WIN32)

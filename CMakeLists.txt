@@ -241,8 +241,7 @@ function (superbuild_find_projects var)
       # These are publicly available, but are behind logins or license
       # acceptances. Rehosted internally at Kitware for build machines.
       list(APPEND projects
-        nvidiamdl
-        nvidiaoptix)
+        nvidiamdl)
 
       # These are open source, but require closed SDKs.
       list(APPEND projects
