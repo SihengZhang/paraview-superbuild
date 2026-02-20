@@ -1,7 +1,7 @@
 superbuild_set_revision(anari
   # https://github.com/KhronosGroup/ANARI-SDK/releases
-  URL     "https://github.com/KhronosGroup/ANARI-SDK/archive/refs/tags/v0.15.0.tar.gz"
-  URL_MD5 67145f51cb4cd98c78948735bc2fc6ae)
+  URL     "https://github.com/KhronosGroup/ANARI-SDK/archive/6bec2eb6bbe50a21e4233e30892f558dc3e3a804.zip"
+  URL_MD5 e9fb923019fddc2459b2b7be9957edb9)
 
 superbuild_set_revision(eigen
   # https://gitlab.com/libeigen/eigen/-/releases
