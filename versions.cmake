@@ -1,5 +1,7 @@
 superbuild_set_revision(anari
   # https://github.com/KhronosGroup/ANARI-SDK/releases
+  # Using a specific commit instead of a release tarball, since the latest
+  # release (v0.15.0) is missing the texture wrap mode fixes
   URL     "https://github.com/KhronosGroup/ANARI-SDK/archive/6bec2eb6bbe50a21e4233e30892f558dc3e3a804.tar.gz"
   URL_MD5 56ad958a93debd23752b5515b29188f1)
 
@@ -258,6 +260,9 @@ superbuild_set_revision(nvidiamdl
 
 superbuild_set_revision(visrtx
   # https://github.com/NVIDIA/VisRTX/releases
+  # Using a specific commit instead of a release tarball, since the latest
+  # release (v0.13.0) is missing the the ability to disable NVML support, which
+  # is needed for ParaView's superbuild builders.
   URL     "https://github.com/NVIDIA/VisRTX/archive/8d98e069a52d511d82820da39e7b82bbcfdaa3e0.tar.gz"
   URL_MD5 "7ab94065af71f2e00f4fe748c4d97bb5")
 
