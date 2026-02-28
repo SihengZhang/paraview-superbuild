@@ -1,7 +1,7 @@
 superbuild_set_revision(anari
   # https://github.com/KhronosGroup/ANARI-SDK/releases
-  URL     "https://github.com/KhronosGroup/ANARI-SDK/archive/6bec2eb6bbe50a21e4233e30892f558dc3e3a804.zip"
-  URL_MD5 e9fb923019fddc2459b2b7be9957edb9)
+  URL     "https://github.com/KhronosGroup/ANARI-SDK/archive/6bec2eb6bbe50a21e4233e30892f558dc3e3a804.tar.gz"
+  URL_MD5 56ad958a93debd23752b5515b29188f1)
 
 superbuild_set_revision(eigen
   # https://gitlab.com/libeigen/eigen/-/releases
@@ -258,8 +258,8 @@ superbuild_set_revision(nvidiamdl
 
 superbuild_set_revision(visrtx
   # https://github.com/NVIDIA/VisRTX/releases
-  URL     "https://github.com/NVIDIA/VisRTX/archive/8d98e069a52d511d82820da39e7b82bbcfdaa3e0.zip"
-  URL_MD5 "39e1e45eb3c3a4752ed58d572303022b")
+  URL     "https://github.com/NVIDIA/VisRTX/archive/8d98e069a52d511d82820da39e7b82bbcfdaa3e0.tar.gz"
+  URL_MD5 "7ab94065af71f2e00f4fe748c4d97bb5")
 
 superbuild_set_revision(rapidjson
   # https://github.com/Tencent/rapidjson/releases
