@@ -6,7 +6,7 @@ endif ()
 
 superbuild_add_project(visrtx
   SOURCE_SUBDIR "devices/rtx"
-  DEPENDS anari cxx17 nvidiamdl
+  DEPENDS anari cuda cxx17 nvidiamdl
   LICENSE_FILES
     LICENSE
   SPDX_LICENSE_IDENTIFIER
