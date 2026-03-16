@@ -1,6 +1,9 @@
 superbuild_add_project(anari
   DEPENDS
-    cxx11
+    cxx17
+    # currently anari unconditionally needs Python
+    # even if Python wrapping is disabled.
+    python3
   LICENSE_FILES
     LICENSE
   SPDX_LICENSE_IDENTIFIER
