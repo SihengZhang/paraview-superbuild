@@ -201,11 +201,7 @@ if (anari_enabled)
 endif ()
 
 if (visrtx_enabled)
-  set(visrtxextra_libraries
-    anari_library_visrtx
-    dds
-    nv_freeimage
-    libmdl_sdk)
+  set(visrtxextra_libraries anari_library_visrtx)
 
   foreach (visrtxextra_library IN LISTS visrtxextra_libraries)
     superbuild_windows_install_plugin("${visrtxextra_library}.dll"
