@@ -263,8 +263,8 @@ superbuild_set_revision(visrtx
   # Using a specific commit instead of a release tarball, since the latest
   # release (v0.13.0) is missing the the ability to disable NVML support, which
   # is needed for ParaView's superbuild builders.
-  URL     "https://github.com/NVIDIA/VisRTX/archive/8d98e069a52d511d82820da39e7b82bbcfdaa3e0.tar.gz"
-  URL_MD5 "7ab94065af71f2e00f4fe748c4d97bb5")
+  URL     "https://github.com/NVIDIA/VisRTX/archive/075cd947d6a2385a49305c1d3732372400f128d1.tar.gz"
+  URL_MD5 "5db9ad4f7b9fcc0626349d56523b89cb")
 
 superbuild_set_revision(rapidjson
   # https://github.com/Tencent/rapidjson/releases
