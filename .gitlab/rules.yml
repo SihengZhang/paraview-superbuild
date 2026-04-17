@@ -15,8 +15,12 @@
 ##     Set to "true" when package upload jobs should be performed.
 ####
 
+variables:
+    PVSB_CI_PIPELINE_NAME: "ParaView Superbuild $CI_COMMIT_REF_NAME Pipeline"
+
 # When to even consider running a pipeline
 workflow:
+    name: "${PVSB_CI_PIPELINE_NAME}"
     rules:
         # Run for merge requests.
         - if: '$CI_MERGE_REQUEST_ID'
@@ -24,6 +28,8 @@ workflow:
           auto_cancel:
               # Cancel all pipeline jobs if a new commit comes in on the branch/tag.
               on_new_commit: interruptible
+          variables:
+              PVSB_CI_PIPELINE_NAME: "ParaView Superbuild MR !$CI_MERGE_REQUEST_IID Pipeline"
         # If this is not a MR, do not run for other projects.
         - if: '$CI_PROJECT_PATH != "paraview/paraview-superbuild"'
           when: never
@@ -33,15 +39,21 @@ workflow:
           auto_cancel:
               # Never cancel scheduled/triggered pipelines because of new commits
               on_new_commit: none
+          variables:
+              PVSB_CI_PIPELINE_NAME: "ParaView Superbuild $CI_PIPELINE_SCHEDULE_DESCRIPTION Scheduled Pipeline"
         # Run for protected branches.
         - if: '$CI_COMMIT_REF_PROTECTED == "true"'
           when: always
           auto_cancel:
               # Cancel all pipeline jobs if a new commit comes in on the branch.
               on_new_commit: interruptible
+          variables:
+              PVSB_CI_PIPELINE_NAME: "ParaView Superbuild Protected Pipeline for $CI_COMMIT_REF_NAME"
         # Run for tags.
         - if: '$CI_COMMIT_TAG'
           when: always
+          variables:
+              PVSB_CI_PIPELINE_NAME: "ParaView Superbuild Pipeline for tag $CI_COMMIT_TAG"
         # Skip pipelines in all other cases
         - when: never
 
