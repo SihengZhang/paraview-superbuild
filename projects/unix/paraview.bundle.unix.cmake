@@ -222,9 +222,28 @@ foreach (extra_library IN LISTS extra_libraries)
   endforeach ()
 endforeach ()
 
+if (anari_enabled)
+  set(anariextra_libraries
+    libanari_library_helide)
+
+  foreach (anariextra_library IN LISTS anariextra_libraries)
+    file(GLOB lib_filenames
+      RELATIVE "${superbuild_install_location}/lib"
+      "${superbuild_install_location}/lib/${anariextra_library}.so*")
+
+    foreach (lib_filename IN LISTS lib_filenames)
+      superbuild_unix_install_module("${lib_filename}"
+        "lib"
+        "lib"
+        LOADER_PATHS  "${library_paths}"
+        LOCATION      "lib")
+    endforeach ()
+  endforeach ()
+endif ()
+
 if (visrtx_enabled)
   set(visrtxextra_libraries
-    libVisRTX
+    libanari_library_visrtx
     dds
     nv_freeimage
     libmdl_sdk)

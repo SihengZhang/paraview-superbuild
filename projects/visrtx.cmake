@@ -5,7 +5,8 @@ if (UNIX AND NOT APPLE)
 endif ()
 
 superbuild_add_project(visrtx
-  DEPENDS nvidiamdl nvidiaoptix
+  SOURCE_SUBDIR "devices/rtx"
+  DEPENDS anari cuda cxx17 nvidiamdl
   LICENSE_FILES
     LICENSE
   SPDX_LICENSE_IDENTIFIER
@@ -17,11 +18,6 @@ superbuild_add_project(visrtx
     -DCMAKE_MACOSX_RPATH:BOOL=FALSE
     -DCMAKE_INSTALL_NAME_DIR:PATH=<INSTALL_DIR>/lib
     -DCMAKE_INSTALL_LIBDIR:STRING=lib
-    -DVISRTX_BUILD_SAMPLE:BOOL=OFF
+    -DVISRTX_ENABLE_MDL_SUPPORT:BOOL=ON
+    -DVISRTX_ENABLE_NVML:BOOL=OFF
     ${visrtx_options})
-
-superbuild_apply_patch(visrtx cuda-11
-  "Support CUDA 11")
-
-superbuild_apply_patch(visrtx cuda-12
-  "Support CUDA 12")

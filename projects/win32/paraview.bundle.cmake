@@ -189,12 +189,19 @@ foreach (extra_library_name IN LISTS extra_library_names)
     SEARCH_DIRECTORIES "${superbuild_install_location}/bin")
 endforeach ()
 
+if (anari_enabled)
+  set(anariextra_libraries
+    anari_library_helide)
+
+  foreach (anariextra_library IN LISTS anariextra_libraries)
+    superbuild_windows_install_plugin("${anariextra_library}.dll"
+      "bin" "bin"
+      SEARCH_DIRECTORIES "${superbuild_install_location}/bin")
+  endforeach ()
+endif ()
+
 if (visrtx_enabled)
-  set(visrtxextra_libraries
-    VisRTX
-    dds
-    nv_freeimage
-    libmdl_sdk)
+  set(visrtxextra_libraries anari_library_visrtx)
 
   foreach (visrtxextra_library IN LISTS visrtxextra_libraries)
     superbuild_windows_install_plugin("${visrtxextra_library}.dll"
