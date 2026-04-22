@@ -263,7 +263,7 @@ superbuild_add_project(paraview
   DEFAULT_ON
   DEPENDS cxx11
   DEPENDS_OPTIONAL
-    adios2 alembic catalyst cuda boost eigen gdal hdf5 matplotlib mpi numpy pdal png
+    adios2 alembic catalyst cuda boost eigen gdal hdf5 ifcopenshell matplotlib mpi numpy pdal png
     protobuf python3 qt qt5 qt6 visitbridge zlib silo las lookingglass pythonmpi4py
     xdmf3 vrpn viskores netcdf
     cdi
@@ -300,6 +300,7 @@ superbuild_add_project(paraview
     -DPARAVIEW_ENABLE_FFMPEG:BOOL=${ffmpeg_enabled}
     -DPARAVIEW_ENABLE_FIDES:BOOL=${fides_enabled}
     -DPARAVIEW_ENABLE_GDAL:BOOL=${gdal_enabled}
+    -DPARAVIEW_ENABLE_IFC:BOOL=${ifcopenshell_enabled}
     -DPARAVIEW_ENABLE_OPENTURNS:BOOL=${openturns_enabled}
     -DPARAVIEW_ENABLE_PDAL:BOOL=${pdal_enabled}
     -DPARAVIEW_ENABLE_LAS:BOOL=${las_enabled}

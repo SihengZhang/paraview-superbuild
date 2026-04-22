@@ -372,6 +372,17 @@ superbuild_set_revision(occt
   URL     "https://www.paraview.org/files/dependencies/occt-7.9.2-stripped.tar.bz2"
   URL_MD5 fb6e410bef4cfeb3fc3374042babf88b)
 
+superbuild_set_revision(ifcopenshell
+  # https://github.com/IfcOpenShell/IfcOpenshell.git
+  # branch: v0.8.0, SHA: a460e29473622c75685eedf6a2f531dc9aff1905
+  # tag: bonsai-0.8.5-alpha2601081541
+  # This is the current version on this branch (which is the default branch)
+  # which is newer than ifcopenshell-python-0.8.4 (the latest released)
+  # because we need cmake support not available in 0.8.4.
+  # we should upgrade to ifcopenshell-python-0.8.5 when it is released
+  URL "https://www.paraview.org/files/dependencies/IfcOpenShell-a460e29473622c75685eedf6a2f531dc9aff1905.tar.gz"
+  URL_MD5 6c8f780f1690a2d5b7c02f0720e02f83)
+
 superbuild_set_revision(medfile
   # From: https://www.salome-platform.org/?page_id=2768
   URL           "https://www.paraview.org/files/dependencies/med-6.0.1.tar.gz"
