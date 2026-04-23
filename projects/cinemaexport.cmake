@@ -1,3 +1,10 @@
+set(use_embree3 OFF)
+if (embree_SOURCE_SELECTION STREQUAL "2.7.1")
+  # embree_SOURCE_SELECTION actually contains the version of ospray selected.
+  # ospray 2.7.1 uses embree version 3.13.1
+  set(use_embree3 ON)
+endif ()
+
 superbuild_add_project(cinemaexport
   LICENSE_FILES
     license.md
@@ -11,7 +18,7 @@ superbuild_add_project(cinemaexport
     -DBUILD_SHARED_LIBS:BOOL=${BUILD_SHARED_LIBS}
     -DCMAKE_INSTALL_LIBDIR:PATH=lib
     -DCMAKE_INSTALL_RPATH:STRING=<INSTALL_DIR>/lib
-    -DUSE_EMBREE3:BOOL=ON
+    -DUSE_EMBREE3:BOOL=${use_embree3}
   )
 
 # https://github.com/cinemascience/cinema-paraview-plugin/pull/7
