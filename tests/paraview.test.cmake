@@ -62,6 +62,8 @@ if (UNIX AND NOT APPLE)
       # MEDReader plugin has a test, but the rpaths are not 100% correct.
       # Ignore for now.
       "MEDReader/lib" # paraview/common-superbuild#73
+      # CUDA comes from the host machine
+      "libcuda"
       ${ldd_excludes}
       )
 endif ()
