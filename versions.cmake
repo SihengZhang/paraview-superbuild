@@ -98,6 +98,14 @@ superbuild_set_revision(surfacetrackercut
   URL "https://www.paraview.org/files/dependencies/Surface-Cutting-d808cb1493be2ea982cd80f21ff6a5d92e7ac890.zip"
   URL_MD5 098edb571179e034c93c5d4b41ffba5d)
 
+superbuild_set_selectable_source(sz3reader
+  # https://github.com/guoxiliu/ParaView-SZ3Reader
+  SELECT git CUSTOMIZABLE DEFAULT
+    GIT_REPOSITORY "https://github.com/guoxiliu/ParaView-SZ3Reader.git"
+    GIT_TAG        "origin/main"
+  SELECT source CUSTOMIZABLE
+    SOURCE_DIR "source-sz3reader")
+
 #------------------------------------------------------------------------------
 # Optional Plugins. Doesn't affect ParaView binaries at all even if missing
 # or disabled.

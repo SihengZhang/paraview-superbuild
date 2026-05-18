@@ -177,6 +177,7 @@ function (superbuild_find_projects var)
     snappy
     sqlite
     sympy
+    sz3reader
     szip
     tiff
     ttk
