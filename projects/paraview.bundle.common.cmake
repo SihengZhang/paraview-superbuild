@@ -234,6 +234,10 @@ if (surfacetrackercut_enabled)
   list(APPEND paraview_plugins
     SurfaceTrackerCut)
 endif()
+if (sz3reader_enabled)
+  list(APPEND paraview_plugins
+    SZ3Reader)
+endif ()
 
 list(APPEND paraview_plugins ${paraview_additional_plugins})
 
