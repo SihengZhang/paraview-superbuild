@@ -102,7 +102,7 @@ superbuild_set_selectable_source(sz3reader
   # https://github.com/guoxiliu/ParaView-SZ3Reader
   SELECT git CUSTOMIZABLE DEFAULT
     GIT_REPOSITORY "https://github.com/guoxiliu/ParaView-SZ3Reader.git"
-    GIT_TAG        "origin/main"
+    GIT_TAG        "v1.0"
   SELECT source CUSTOMIZABLE
     SOURCE_DIR "source-sz3reader")
 
